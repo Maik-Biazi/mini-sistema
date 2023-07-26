@@ -10,6 +10,7 @@ export const App = () => {
       <BrowserRouter>
         <MenuLateral>
           <AppRoutes />
+        </MenuLateral>
       </BrowserRouter>
     </AppThemeProvider>
   );
