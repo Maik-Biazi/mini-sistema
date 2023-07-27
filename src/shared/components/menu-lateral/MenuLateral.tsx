@@ -1,7 +1,8 @@
-import { Box, Drawer,useTheme } from "@mui/material"
+import { Avatar, Box, Drawer, useTheme, Divider } from "@mui/material"
+import { deepOrange } from "@mui/material/colors"
 
-interface IMenuLateralProps{
-    children:React.ReactNode
+interface IMenuLateralProps {
+    children: React.ReactNode
 }
 
 export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
@@ -9,11 +10,17 @@ export const MenuLateral: React.FC<IMenuLateralProps> = ({ children }) => {
     return (
         <>
             <Drawer variant="permanent">
-                Teste
+                <Box width={theme.spacing(28)} height="100%" display="flex" flexDirection="column">
+                    <Box width="100%" height={theme.spacing(20)} display="flex" alignItems="center" justifyContent="center">
+                        <Avatar sx={{ bgcolor: deepOrange[500], height: theme.spacing(12), width: theme.spacing(12) }}>M</Avatar>
+                    </Box>
+                    <Divider />
+                    <Box flex={1}>
+                    </Box>
+                </Box>
             </Drawer>
-            
             <Box height="100vh" marginLeft={theme.spacing(28)}>
-            {children}
+                {children}
             </Box>
         </>
     )
